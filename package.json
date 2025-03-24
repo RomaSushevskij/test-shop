@@ -1,0 +1,45 @@
+{
+  "name": "test-shop",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "lint:css": "npx stylelint \"**/*.css\"",
+    "lint:css:fix": "npx stylelint \"**/*.css\" --fix",
+    "format": "npx prettier . --write",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.8",
+    "@reduxjs/toolkit": "^2.6.1",
+    "modern-normalize": "^3.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.4.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.3",
+    "stylelint": "^16.16.0",
+    "stylelint-config-clean-order": "^7.0.0",
+    "stylelint-config-css-modules": "^4.4.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-order": "^6.0.4",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.27.0",
+    "vite": "^6.2.0"
+  }
+}
