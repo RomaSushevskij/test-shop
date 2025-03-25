@@ -1,0 +1,1 @@
+export const PRODUCTS_DRAWER_WIDTH = 300;

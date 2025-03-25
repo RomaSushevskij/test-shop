@@ -1,0 +1,13 @@
+.multi_line_ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.title {
+  -webkit-line-clamp: 1;
+}
+
+.description {
+  -webkit-line-clamp: 2;
+}

@@ -1,4 +1,4 @@
-@import url("modern-normalize");
+@import url("../../../node_modules/modern-normalize");
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
