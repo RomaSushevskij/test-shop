@@ -1,8 +1,7 @@
 import { useMemo } from "react";
 import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
 
-import { ProductCard, ProductCardsSkeletons, useProductsQuery } from "@/entities/products";
+import { ProductCard, useProductsQuery } from "@/entities/products";
 import { ProductsSidebar } from "./products-sidebar.tsx";
 import {
   defineMinMaxProductsPrices,
@@ -13,6 +12,8 @@ import {
   useProductsFilters,
 } from "@/features/products/products-filters";
 import { AddProductToCartBtn } from "@/features/cart";
+
+import { ProductsGrid } from "./products-grid.tsx";
 
 export const ProductsPage = () => {
   const { data, isLoading } = useProductsQuery();
@@ -37,6 +38,8 @@ export const ProductsPage = () => {
   const productsFilteredByPriceRange = useMemo(() => {
     return filterProductsByPriceFilter({ products: productsFilteredBySearch ?? [], priceFilter });
   }, [priceFilter, productsFilteredBySearch]);
+
+  const isFilteredProducts = Boolean(productsList) && Boolean(productsFilteredByPriceRange.length);
 
   const renderProducts = productsFilteredByPriceRange.map((product) => (
     <ProductCard
@@ -66,14 +69,11 @@ export const ProductsPage = () => {
         }
       />
 
-      <Stack
-        sx={{ flexGrow: 1 }}
-        display={"grid"}
-        gridTemplateColumns={"repeat(auto-fit, minmax(19.375rem, 1fr))"}
-        gap={4}
-      >
-        {isLoading ? <ProductCardsSkeletons /> : renderProducts}
-      </Stack>
+      <ProductsGrid
+        renderProducts={renderProducts}
+        isLoading={isLoading}
+        isFilteredProducts={isFilteredProducts}
+      />
     </Box>
   );
 };
