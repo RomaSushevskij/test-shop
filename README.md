@@ -50,4 +50,4 @@ npm run dev
 ## Деплой
 
 Приложение развернуто на **Vercel**
-[Ссылка на демо](https://your-deployed-link.vercel.app)
+[Ссылка на демо](https://test-shop-xi.vercel.app)
