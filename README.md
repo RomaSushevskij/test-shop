@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# Test shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
+Проект "Test shop" - это SPA-приложение, которое загружает список товаров из API и позволяет пользователям искать, фильтровать и добавлять товары в корзину. Реализована навигация между страницами каталога и корзины с использованием React Router.
 
-Currently, two official plugins are available:
+## Технологии
+- **React + Vite** – основа проекта
+- **Material UI (MUI)** – стилизация компонентов
+- **Context API** – управление состоянием корзины (использовано только для демонстрации работы с Context API, в реальном проекте лучше подошел бы Redux)
+- **React Router** – маршрутизация между страницами каталога и корзины
+- **React Hooks** – управление состоянием и эффектами
+- **FSD (Feature-Sliced Design)** – организация структуры проекта
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Функционал
+- Загрузка списка товаров из API (FakeStore API)
+- Поиск и фильтрация товаров
+- Добавление/удаление товаров из корзины
+- Подсчет общей стоимости товаров в корзине
+- Ленивый импорт страниц с React.lazy
+- Адаптивный дизайн с использованием MUI
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+## Структура проекта
+```
+/src
+  /app          # Инициализация приложения
+  /features     # Отдельные функциональные модули (корзина, фильтрация и т. д.)
+  /entities     # Бизнес-сущности (товары и т. д.)
+  /shared       # Переиспользуемые компоненты и утилиты
+  /pages        # Страницы приложения (каталог, корзина)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Установка и запуск
+```sh
+# Клонирование репозитория
+git clone git@github.com:RomaSushevskij/test-shop.git
+cd test-shop
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+# Установка зависимостей
+npm install
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
+# Запуск в режиме разработки
+npm run dev
 ```
+
+## Деплой
+Приложение развернуто на **Vercel** 
+[Ссылка на демо](https://your-deployed-link.vercel.app)
+
+
